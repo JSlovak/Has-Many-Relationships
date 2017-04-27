@@ -82,13 +82,13 @@
   -- with alias 'comment_body'
   -- where post.created_at after 2015-01-01
 
-  SELECT comments.*,
-  posts.title as "post_title",
-  posts.url as "post_url",
-  comments.body as "comment_body"
-  FROM comments
-  JOIN posts on comments.posts_id = posts.id
-  WHERE posts.created_at > '2015-01-01';
+  -- SELECT comments.*,
+  -- posts.title as "post_title",
+  -- posts.url as "post_url",
+  -- comments.body as "comment_body"
+  -- FROM comments
+  -- JOIN posts on comments.posts_id = posts.id
+  -- WHERE posts.created_at > '2015-01-01';
 
 --10. Query for all fields
   -- from comments
@@ -97,12 +97,29 @@
   -- with alias 'comment_body'
   -- where the comment_body INCLUDES 'USB'
 
+-- SELECT comments.*, posts.title as "post_title",
+-- posts.url as "post_url",
+-- comments.body as "comment_body"
+-- FROM comments
+-- JOIN posts on comments.posts_id = posts.id
+-- WHERE comments.body ~* 'USB';
+
 --11. Query for all fields
     -- from comments
     -- with alias 'post_title'
     -- with alias 'post_url'
     -- with alias 'comment_body'
     -- where the comment_body INCLUDES 'matrix'
+
+  SELECT posts.title as "post_title",
+  users.first_name,
+  users.last_name,
+  comments.body as "comment_body"
+  FROM comments
+  JOIN posts on comments.posts_id = posts.id
+  JOIN users ON posts.users_id = users.id
+   WHERE comments.body ~* 'matrix';
+
 
 --12. Query for post_title (alias), first_name, last_name, comment_body
   -- from posts
