@@ -46,14 +46,18 @@
   -- from posts
   -- where users.created_at IS afer Jan 1, 2015
 
-SELECT posts.title, posts.content, users.username
-FROM posts
-JOIN users ON posts.users_id = users.id
-WHERE users.created_at < '2015-01-01';
+-- SELECT posts.title, posts.content, users.username
+-- FROM posts
+-- JOIN users ON posts.users_id = users.id
+-- WHERE users.created_at < '2015-01-01';
 
 --7. Query for all fields
   -- from comments
   -- with alias 'Post Title'
+
+SELECT comments.*, posts.title as "Post Title"
+FROM comments
+JOIN posts on comments.posts_id = posts.id;
 
 --8. Query for all fields
   -- from comments
