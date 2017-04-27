@@ -37,13 +37,19 @@
 --5. Query for usernames
   -- from users
   -- where post.created_at IS after Jan 1, 2015
-SELECT username
-FROM users
-WHERE created_at > '2015-01-01';
+
+-- SELECT username
+-- FROM users
+-- WHERE created_at > '2015-01-01';
 
 --6. Query for post title, post content, users.username
   -- from posts
   -- where users.created_at IS afer Jan 1, 2015
+
+SELECT posts.title, posts.content, users.username
+FROM posts
+JOIN users ON posts.users_id = users.id
+WHERE users.created_at < '2015-01-01';
 
 --7. Query for all fields
   -- from comments
