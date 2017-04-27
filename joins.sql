@@ -10,9 +10,9 @@
   -- from posts
   -- where users_id IS 100
 
-SELECT *
-FROM posts
-WHERE users_id = 100;
+-- SELECT *
+-- FROM posts
+-- WHERE users_id = 100;
 
 
 --3. Query for post fields, users.last_name
