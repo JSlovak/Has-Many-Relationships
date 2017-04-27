@@ -55,15 +55,22 @@
   -- from comments
   -- with alias 'Post Title'
 
-SELECT comments.*, posts.title as "Post Title"
-FROM comments
-JOIN posts on comments.posts_id = posts.id;
+-- SELECT comments.*, posts.title as "Post Title"
+-- FROM comments
+-- JOIN posts on comments.posts_id = posts.id;
 
 --8. Query for all fields
   -- from comments
   -- wtih alias 'post_url'
   -- with alia 'comment_body'
   -- where posts.created_at IS after Jan 1, 2015
+
+  SELECT comments.*, posts.title as "post_title",
+  posts.url as "post_url",
+  comments.body as "comment_body"
+  FROM comments
+  JOIN posts on comments.posts_id = posts.id;
+  WHERE posts.created_at < '2015-01-01';
 
 --9. Query for all fields
   -- from comments
