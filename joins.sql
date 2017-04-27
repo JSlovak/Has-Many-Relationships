@@ -125,19 +125,31 @@
   -- from posts
   -- where comment_body contains 'SSL' AND post_content contains 'dolorum'
 
-SELECT posts.title AS "post_title",
-users.first_name,
-users.last_name,
-comments.body AS "comment_body"
-FROM comments
-JOIN posts ON comments.posts_id = posts.id
-JOIN users ON posts.users_id = users.id
-WHERE comments.body ~* 'SSL'
-AND posts.content ~* 'dolorum';
+-- SELECT posts.title AS "post_title",
+-- users.first_name,
+-- users.last_name,
+-- comments.body AS "comment_body"
+-- FROM comments
+-- JOIN posts ON comments.posts_id = posts.id
+-- JOIN users ON posts.users_id = users.id
+-- WHERE comments.body ~* 'SSL'
+-- AND posts.content ~* 'dolorum';
 
 --13. Query for first_name(alias post_author_first_name), last_name, post_title, username, comment_body
      -- from comments
      -- where comment_body contains 'SSL' OR 'firewall' AND post_content contains 'nemo'
+SELECT
+users.first_name as "post_author_first_name",
+users.last_name as "post_author_last_name",
+posts.title as "post_title",
+users.username as "comment_author_username",
+comments.body as "comment_body"
+FROM comments
+JOIN posts on comments.posts_id = posts.id
+JOIN users ON posts.users_id = users.id
+WHERE (comments.body ~* 'SSL'
+OR comments.body ~* 'firewall')
+AND posts.content ~* 'nemo';
 
 -- ADDITIONAL QUERIES
 
