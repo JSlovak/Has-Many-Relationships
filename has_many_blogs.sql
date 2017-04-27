@@ -1,4 +1,4 @@
-
+-- Create user table
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 id SERIAL PRIMARY KEY,
@@ -9,6 +9,7 @@ created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
 updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW()
 );
 
+-- Create posts table
 DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
 id SERIAL PRIMARY KEY,
@@ -20,6 +21,7 @@ updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
 users_id INTEGER REFERENCES users (id)
 );
 
+-- Create comments table
 DROP TABLE IF EXISTS comments;
 CREATE TABLE comments (
 id SERIAL PRIMARY KEY,
