@@ -19,9 +19,20 @@
   -- from posts
   -- where users_id IS 200
 
+-- SELECT posts. *, users.first_name, users.last_name
+-- FROM posts
+-- JOIN users ON posts.users_id = users_id
+-- WHERE users.users_id = 200;
+
 --4. Query for all fields and username
   -- from posts
   --  where users.first_name IS 'Norene' AND users.last_name IS 'Schmitt'
+
+SELECT posts.*, users.first_name
+FROM posts
+JOIN users ON posts.users_id = users.users_id
+WHERE first_name = 'Norene'
+AND last_name = 'Schmitt';
 
 --5. Query for usernames
   -- from users
