@@ -28,15 +28,18 @@
   -- from posts
   --  where users.first_name IS 'Norene' AND users.last_name IS 'Schmitt'
 
-SELECT posts.*, users.first_name
-FROM posts
-JOIN users ON posts.users_id = users.users_id
-WHERE first_name = 'Norene'
-AND last_name = 'Schmitt';
+-- SELECT posts.*, users.first_name
+-- FROM posts
+-- JOIN users ON posts.users_id = users.users_id
+-- WHERE first_name = 'Norene'
+-- AND last_name = 'Schmitt';
 
 --5. Query for usernames
   -- from users
   -- where post.created_at IS after Jan 1, 2015
+SELECT username
+FROM users
+WHERE created_at > '2015-01-01';
 
 --6. Query for post title, post content, users.username
   -- from posts
