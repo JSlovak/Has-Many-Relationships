@@ -14,7 +14,6 @@
 -- FROM posts
 -- WHERE users_id = 100;
 
-
 --3. Query for post fields, users.last_name
   -- from posts
   -- where users_id IS 200
@@ -46,7 +45,9 @@
   -- from posts
   -- where users.created_at IS afer Jan 1, 2015
 
--- SELECT posts.title, posts.content, users.username
+-- SELECT posts.title,
+-- posts.content,
+-- users.username
 -- FROM posts
 -- JOIN users ON posts.users_id = users.id
 -- WHERE users.created_at < '2015-01-01';
@@ -55,7 +56,8 @@
   -- from comments
   -- with alias 'Post Title'
 
--- SELECT comments.*, posts.title as "Post Title"
+-- SELECT comments.*,
+-- posts.title as "Post Title"
 -- FROM comments
 -- JOIN posts on comments.posts_id = posts.id;
 
@@ -65,34 +67,46 @@
   -- with alia 'comment_body'
   -- where posts.created_at IS after Jan 1, 2015
 
-  SELECT comments.*, posts.title as "post_title",
-  posts.url as "post_url",
-  comments.body as "comment_body"
-  FROM comments
-  JOIN posts on comments.posts_id = posts.id;
-  WHERE posts.created_at < '2015-01-01';
+  -- SELECT comments.*,
+  -- posts.title as "post_title",
+  -- posts.url as "post_url",
+  -- comments.body as "comment_body"
+  -- FROM comments
+  -- JOIN posts on comments.posts_id = posts.id;
+  -- WHERE posts.created_at < '2015-01-01';
 
 --9. Query for all fields
   -- from comments
   -- with alias 'post_title'
   -- with alias 'post_url'
   -- with alias 'comment_body'
-  -- where the comment body INCLUDES 'USB'
+  -- where post.created_at after 2015-01-01
+
+  SELECT comments.*,
+  posts.title as "post_title",
+  posts.url as "post_url",
+  comments.body as "comment_body"
+  FROM comments
+  JOIN posts on comments.posts_id = posts.id
+  WHERE posts.created_at > '2015-01-01';
 
 --10. Query for all fields
   -- from comments
   -- with alias 'post_title'
   -- with alias 'post_url'
   -- with alias 'comment_body'
-  -- where the comment_body INCLUDES 'matrix'
+  -- where the comment_body INCLUDES 'USB'
 
---11. Query for post_title (alias), first_name, last_name, comment_body
+--11. Query for all fields
+    -- from comments
+    -- with alias 'post_title'
+    -- with alias 'post_url'
+    -- with alias 'comment_body'
+    -- where the comment_body INCLUDES 'matrix'
+
+--12. Query for post_title (alias), first_name, last_name, comment_body
   -- from posts
   -- where comment_body contains 'SSL' AND post_content contains 'dolorum'
-
- --12. Query for first_name (alias post_author_first_name), last_name, comment_body
-   -- from comments table
-   -- where post_content contains
 
 --13. Query for first_name(alias post_author_first_name), last_name, post_title, username, comment_body
      -- from comments
