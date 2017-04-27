@@ -3,9 +3,17 @@
 --1.  Query for all fields
   -- from users table
 
+-- SELECT *
+-- FROM users;
+
 --2. Query for all fields
   -- from posts
   -- where users_id IS 100
+
+SELECT *
+FROM posts
+WHERE users_id = 100;
+
 
 --3. Query for post fields, users.last_name
   -- from posts
